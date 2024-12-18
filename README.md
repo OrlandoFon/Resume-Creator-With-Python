@@ -1,6 +1,10 @@
 # Resume PDF Generator
 This project provides a script to generate a PDF resume using Python and the ReportLab library. It allows for customizable fonts, colors, layouts, and sections. You can easily integrate your own data, fonts, and images to create a professional-looking PDF resume.
 
+<p align="center">
+  <img src="assets/generated_resume_example.png" alt="Project Screenshot" width="400">
+</p>
+
 ## Features
 - **Customizable Data Source**:  
   Resume data is stored in a Python dictionary (`RESUME_DATA`) that you can edit to include your personal information, education history, work experience, projects, and more.
