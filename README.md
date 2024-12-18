@@ -29,7 +29,7 @@ The script expects fonts and image assets (like icons) inside an `assets` direct
 1. **Clone or Download the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/Resume-Creator-With-Python.git
+   git clone https://github.com/OrlandoFon/Resume-Creator-With-Python.git
    cd Resume-Creator-With-Python
 
 2. **Install Dependencies:**
