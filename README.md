@@ -74,4 +74,4 @@ The script expects fonts and image assets (like icons) inside an `assets` direct
 - If you find issues or want to enhance functionality, feel free to open an issue or submit a pull request on the GitHub repository.
 
 # License
-- This project is not licensed.
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
