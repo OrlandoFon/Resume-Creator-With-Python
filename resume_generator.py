@@ -330,26 +330,35 @@ def add_experience_section(story, styles, experience_list):
             story.append(Paragraph("• " + detail, styles['BulletItem']))
 
 def add_projects_volunteering_section(story, styles, projects_list):
-    """Add the ADDITIONAL PROJECTS & VOLUNTEERING section."""
+    """Add ADDITIONAL PROJECTS & VOLUNTEERING section"""
     if not projects_list:
         return
     story.append(Spacer(1, 6))
     story.append(Paragraph("ADDITIONAL PROJECTS & VOLUNTEERING", styles['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=HIGHLIGHT_COLOR, spaceBefore=1, spaceAfter=4))
+    
     for proj in projects_list:
         year_label = proj.get('year') or proj.get('year_range', '')
-        prefix = f"<b>{year_label}:</b> " if year_label else ""
-        story.append(Paragraph(prefix + proj['description'], styles['NormalText']))
+        if year_label:
+            line = f'<font name="{BOLD_FONT}">{year_label}:</font> {proj["description"]}'
+        else:
+            line = proj['description']
+        story.append(Paragraph(line, styles['NormalText']))
 
 def add_certifications_skills_interests_section(story, styles, certifications, skills, interests):
-    """Add the CERTIFICATIONS, SKILLS & INTERESTS section."""
+    """Add CERTIFICATIONS, SKILLS & INTERESTS section"""
     story.append(Spacer(1, 6))
     story.append(Paragraph("CERTIFICATIONS, SKILLS & INTERESTS", styles['SectionTitle']))
     story.append(HRFlowable(width="100%", thickness=1, color=HIGHLIGHT_COLOR, spaceBefore=1, spaceAfter=4))
-    story.append(Paragraph("<b>Certifications:</b> " + certifications, styles['NormalText']))
-    story.append(Paragraph("<b>Skills:</b> " + skills, styles['NormalText']))
-    story.append(Paragraph("<b>Interests:</b> " + interests, styles['NormalText']))
 
+    cert_line = f'<font name="{BOLD_FONT}">Certifications:</font> {certifications}'
+    skill_line = f'<font name="{BOLD_FONT}">Skills:</font> {skills}'
+    interest_line = f'<font name="{BOLD_FONT}">Interests:</font> {interests}'
+
+    story.append(Paragraph(cert_line, styles['NormalText']))
+    story.append(Paragraph(skill_line, styles['NormalText']))
+    story.append(Paragraph(interest_line, styles['NormalText']))
+  
 # --------------------------------------
 # MAIN BUILD LOGIC
 # --------------------------------------
